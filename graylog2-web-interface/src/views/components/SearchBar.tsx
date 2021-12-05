@@ -171,7 +171,9 @@ const SearchBar = ({
                           <Field name="queryString">
                             {({ field: { name, value, onChange }, meta: { error } }) => (
                               <StyledQueryInput value={value}
-                                                placeholder='Type your search query here and press enter. E.g.: ("not found" AND http) OR http_response_code:[400 TO 404]'
+                                                timeRange={values.timerange}
+                                            streams={values.streams}
+                                            placeholder='Type your search query here and press enter. E.g.: ("not found" AND http) OR http_response_code:[400 TO 404]'
                                                 error={error}
                                                 warning={warnings.queryString as QueryValidationState}
                                                 onChange={(newQuery) => {

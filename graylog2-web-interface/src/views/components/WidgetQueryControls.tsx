@@ -20,6 +20,7 @@ import { Field } from 'formik';
 import { isEmpty } from 'lodash';
 import moment from 'moment';
 import styled from 'styled-components';
+import { isEmpty } from 'lodash';
 import { useIsFetching } from 'react-query';
 
 import WidgetEditApplyAllChangesContext from 'views/components/contexts/WidgetEditApplyAllChangesContext';
@@ -164,8 +165,9 @@ const WidgetQueryControls = ({ availableStreams, globalOverride }: Props) => {
                   <Field name="queryString">
                     {({ field: { name, value, onChange }, meta: { error } }) => (
                       <QueryInput value={value}
-                                  placeholder={'Type your search query here and press enter. E.g.: ("not found" AND http) OR http_response_code:[400 TO 404]'}
-                                  error={error}
+                                  timeRange={!isEmpty(globalOverride?.timerange) ? globalOverride.timerange : values?.timerange}
+                              streams={values?.streams}
+                              placeholder={'Type your search query here and press enter. E.g.: ("not found" AND http) OR http_response_code:[400 TO 404]'}error={error}
                                   warning={warnings.queryString as QueryValidationState}
                                   onChange={(newQuery) => {
                                     onChange({ target: { value: newQuery, name } });
