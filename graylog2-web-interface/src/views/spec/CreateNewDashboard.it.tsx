@@ -91,7 +91,6 @@ jest.mock('stores/sessions/SessionStore', () => ({
   },
   SessionStore: {
     isLoggedIn: jest.fn(() => true),
-    getSessionId: jest.fn(() => 'foobar'),
   },
 }));
 
