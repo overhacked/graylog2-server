@@ -23,8 +23,8 @@ import { themePropTypes } from 'theme';
 import withPluginEntities from 'views/logic/withPluginEntities';
 import UserPreferencesContext from 'contexts/UserPreferencesContext';
 import type { TimeRange, NoTimeRangeOverride } from 'views/logic/queries/Query';
-import type { QueryValidationState } from 'views/components/searchbar/queryvalidation/QueryValidation';
 import QueryValidationActions from 'views/actions/QueryValidationActions';
+import type { QueryValidationState } from 'views/components/searchbar/queryvalidation/types';
 
 import type ReactAce from './queryinput/ace';
 import type { AutoCompleter, Editor, Line } from './ace-types';
