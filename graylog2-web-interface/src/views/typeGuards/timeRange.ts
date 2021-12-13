@@ -44,3 +44,7 @@ export const isTypeRelativeWithEnd = (timeRange: TimeRange | NoTimeRangeOverride
 export const isTypeKeyword = (timeRange: TimeRange | NoTimeRangeOverride): timeRange is KeywordTimeRange => {
   return 'type' in timeRange && timeRange.type === 'keyword';
 };
+
+export const isTypeTimeRange = (timeRange: TimeRange | NoTimeRangeOverride | undefined): timeRange is TimeRange => {
+  return 'type' in timeRange;
+};
